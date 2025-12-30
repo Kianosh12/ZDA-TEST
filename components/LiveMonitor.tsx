@@ -10,8 +10,8 @@ interface LiveMonitorProps {
 }
 
 const LiveMonitor: React.FC<LiveMonitorProps> = ({ reports, addReport }) => {
-  // Timer set to 60 seconds (1 minute)
-  const [nextRun, setNextRun] = useState<number>(60); 
+  // Timer set to 300 seconds (5 minutes)
+  const [nextRun, setNextRun] = useState<number>(300); 
   const [isRunning, setIsRunning] = useState(false);
   const [selectedReportId, setSelectedReportId] = useState<string | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
@@ -36,7 +36,7 @@ const LiveMonitor: React.FC<LiveMonitorProps> = ({ reports, addReport }) => {
       setNextRun((prev) => {
         if (prev <= 1) {
           triggerAgent();
-          return 60; // Reset to 60 seconds
+          return 300; // Reset to 300 seconds (5 minutes)
         }
         return prev - 1;
       });
@@ -189,7 +189,7 @@ ${report.sources.map(s => `- ${s.title}: ${s.uri}`).join('\n')}
           </div>
           <div>
              <h2 className="text-lg font-black text-white">اتاق وضعیت ZLD</h2>
-             <p className="text-xs text-slate-400">چرخه اسکن خودکار: ۱ دقیقه</p>
+             <p className="text-xs text-slate-400">چرخه اسکن خودکار: ۵ دقیقه</p>
           </div>
         </div>
 
