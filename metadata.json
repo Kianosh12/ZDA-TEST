@@ -1,0 +1,5 @@
+{
+  "name": "ZLD Agent Pro",
+  "description": "An AI-powered engineering agent for Zero Liquid Discharge (ZLD) systems. Features article analysis, water chemistry modeling, scenario generation, and technical reporting.",
+  "requestFramePermissions": []
+}
